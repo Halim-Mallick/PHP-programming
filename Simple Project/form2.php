@@ -16,11 +16,11 @@
             <div class="column column-60 column-offset-20">
                 <h1>Welcome New dev</h1>
                 <p>
-                    <?php if (isset($_GET['fname'])) { ?>
+                    <?php if (isset($_GET['fname']) && !empty($_GET['fname'])) { ?>
                         Fname:
                         <?php echo $_GET['fname']; ?></br>
                     <?php } ?>
-                    <?php if (isset($_GET['lname'])) { ?>
+                    <?php if (isset($_GET['lname']) && !empty($_GET['lname'])) { ?>
                         Lname:
                         <?php echo $_GET['lname']; ?>
                     <?php } ?>
