@@ -1,7 +1,15 @@
 <?php
+$allowTypes=array(
+    'image/png',
+    'image/jpg',
+    'image/jpeg'
+);
 if ($_FILES['photo']) {
-    //move_uploaded_file($_FILES['photo']['tmp_name'],'files/image.png');//Need create a folder name with "files"
+    //if($_FILES['photo']['type']=='image/jpg' || $_FILES['photo']['type']=='image/jpeg' || $_FILES['photo']['type']=='image/png'){
+    if(in_array($_FILES['photo']['type'],$allowTypes)!==false && $_FILES['photo']['size']>5*1024*1024){
+    //move_uploaded_file($_FILES['photo']['tmp_name'],'files/image.png');
     move_uploaded_file($_FILES['photo']['tmp_name'], 'files/' . $_FILES['photo']['name']);
+}
 }
 ?>
 <!DOCTYPE html>
