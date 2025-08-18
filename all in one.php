@@ -1,5 +1,4 @@
 <?php
-
 echo"Hello World\n";
 
 $a=2;
@@ -61,6 +60,58 @@ $student=[
     ["dalim", 10, "Bogura"]
     ];
 echo "\n". $student[0][1];
+echo "\n PHP function \n";
 
+function myFamily($fname,$age){
+    echo "Name: $fname, Age: $age \n";
+}
+myFamily("Halim", "28");
+myFamily("Halim", "28 \n");
+
+function addFive($a, $b){
+    $z=$a+$b;
+    return $z;
+}
+
+echo "5+7= ". AddFive(5,7);
+
+//Pass by Reference
+function Addsome(&$sum){
+    $sum+=5;
+}
+
+$sum=7;
+AddSome($sum);
+echo "\n". $sum;
+
+function sumNum(...$x){
+    $n = 0;
+    $len= count($x);
+    for($i=0; $i< $len; $i++){
+        $n= $n + $x[$i];
+    }
+    return $n;
+}
+$num=sumNum(5,6,8,4);
+echo "\n Sum of All Sum: ". $num;
+
+function rev(...$x){
+    print_r($x);
+    var_dump($x);
+}
+rev(2,4,5,6);
+echo "\n";
+
+function myFam($lname, ...$fname){
+    $text="";
+    $len=count($fname);
+    for($i=0; $i<$len; $i++){
+       $text=$text. "Hi,$fname[$i] $lname \n"; 
+    }
+    return $text;
+}
+
+$a=myFam("Mallick","Halim", "Dalim", "Selim");
+echo $a;
 
 ?>
