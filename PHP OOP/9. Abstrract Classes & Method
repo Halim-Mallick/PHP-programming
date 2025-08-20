@@ -1,0 +1,30 @@
+<?php 
+echo "Abtruc Classes & Method\n";
+
+abstract class Car{
+    public $name;
+    
+    function __construct($n){
+        $this->name=$n;
+    }
+    abstract public function info();
+} 
+
+class Volvo extends Car{
+    
+    public function info(){
+        return $this->name ." Car\n";
+    }
+}
+
+class Audi extends Car{
+    public function info(){
+       return $this->name ." Car"; 
+    }
+}
+
+$volvo=new Volvo('Volbo');
+echo $volvo->info();
+$Audi=new Audi('Audi');
+echo $Audi->info();
+?>
