@@ -1,0 +1,19 @@
+<?php 
+echo "Static Methods Call from Child class: \n";
+
+class Domain{
+    protected static function getWebName(){
+        echo "E-mart \n";
+    }
+}
+
+class Domain3 extends Domain{
+    public $websiteName;
+    public function __construct(){
+        return $this->websiteName= parent :: getWebName();
+        
+    }
+}
+new Domain3();
+
+?>
